@@ -1,9 +1,8 @@
-import 'package:dcslab_mobile/register.dart';
 import 'package:flutter/material.dart';
-import 'register.dart';
+import 'login.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+class Register extends StatelessWidget {
+  const Register({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +36,21 @@ class Login extends StatelessWidget {
               child: TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
+                  labelText: 'Name',
+                  hintText: 'GitzJoey',
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 35),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
                   labelText: 'Email',
-                  hintText: 'john.doe@example.com',
+                  hintText: 'gitzjoey@dcslab.com',
                 ),
               ),
             ),
@@ -60,6 +72,21 @@ class Login extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 35),
+              child: TextField(
+                obscureText: true,
+                enableSuggestions: false,
+                autocorrect: false,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Confirm Password',
+                    hintText: '******************'),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
             Container(
               height: 45,
               width: 200,
@@ -68,27 +95,25 @@ class Login extends StatelessWidget {
               child: TextButton(
                 onPressed: () {},
                 child: const Text(
-                  'Login',
+                  'Sign Up',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
               ),
             ),
             TextButton(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const Register()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Login()));
                 },
                 child: const Text(
-                  'Create New Account',
+                  'Back',
                   style: TextStyle(
                       fontWeight: FontWeight.normal,
                       color: Colors.blue,
                       fontSize: 15),
                 )),
             const SizedBox(
-              height: 200,
+              height: 100,
             ),
             TextButton(
               onPressed: () {},
