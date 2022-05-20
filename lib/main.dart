@@ -84,16 +84,6 @@ class SplashWelcome extends StatelessWidget {
                     hintText: '******************'),
               ),
             ),
-            TextButton(
-              onPressed: () {},
-              child: const Text(
-                'Forgot Password',
-                style: TextStyle(
-                    fontWeight: FontWeight.normal,
-                    color: Colors.blue,
-                    fontSize: 15),
-              ),
-            ),
             const SizedBox(
               height: 25,
             ),
@@ -110,18 +100,28 @@ class SplashWelcome extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 185,
-            ),
             TextButton(
                 onPressed: () {},
                 child: const Text(
-                  'New User? Create Account',
+                  'Create New Account',
                   style: TextStyle(
                       fontWeight: FontWeight.normal,
                       color: Colors.blue,
                       fontSize: 15),
-                ))
+                )),
+            const SizedBox(
+              height: 185,
+            ),
+            TextButton(
+              onPressed: () {},
+              child: const Text(
+                'Forgot Password',
+                style: TextStyle(
+                    fontWeight: FontWeight.normal,
+                    color: Colors.blue,
+                    fontSize: 15),
+              ),
+            )
           ],
         ),
       ),
