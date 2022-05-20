@@ -53,7 +53,7 @@ class SplashWelcome extends StatelessWidget {
             const Text('DCSLab',
                 style: TextStyle(
                     fontSize: 45,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                     decoration: TextDecoration.none,
                     color: Colors.black)),
             const SizedBox(
@@ -88,15 +88,15 @@ class SplashWelcome extends StatelessWidget {
               height: 25,
             ),
             Container(
-              height: 50,
-              width: 250,
+              height: 45,
+              width: 200,
               decoration: BoxDecoration(
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {},
                 child: const Text(
                   'Login',
-                  style: TextStyle(color: Colors.white, fontSize: 25),
+                  style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
               ),
             ),
