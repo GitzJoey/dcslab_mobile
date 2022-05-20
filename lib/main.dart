@@ -34,19 +34,97 @@ class SplashWelcome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('images/bg.jpg'),
-          fit: BoxFit.cover,
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('images/bg.jpg'), fit: BoxFit.fill)),
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 60.0),
+              child: Center(
+                  child: SizedBox(
+                width: 35,
+                height: 35,
+                child: Image.asset('images/g_logo.png'),
+              )),
+            ),
+            const Text('DCSLab',
+                style: TextStyle(
+                    fontSize: 45,
+                    fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.none,
+                    color: Colors.black)),
+            const SizedBox(
+              height: 75,
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 35),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Email',
+                  hintText: 'john.doe@example.com',
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 35),
+              child: TextField(
+                obscureText: true,
+                enableSuggestions: false,
+                autocorrect: false,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Password',
+                    hintText: '******************'),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: const Text(
+                'Forgot Password',
+                style: TextStyle(
+                    fontWeight: FontWeight.normal,
+                    color: Colors.blue,
+                    fontSize: 15),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            Container(
+              height: 50,
+              width: 250,
+              decoration: BoxDecoration(
+                  color: Colors.blue, borderRadius: BorderRadius.circular(20)),
+              child: TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'Login',
+                  style: TextStyle(color: Colors.white, fontSize: 25),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 185,
+            ),
+            TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'New User? Create Account',
+                  style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      color: Colors.blue,
+                      fontSize: 15),
+                ))
+          ],
         ),
       ),
-      child: Container(
-          alignment: const Alignment(0.0, -0.75),
-          child: const Text('DCSLab',
-              style: TextStyle(
-                  decoration: TextDecoration.none,
-                  color: Color.fromARGB(255, 95, 163, 219)))),
     );
   }
 }
