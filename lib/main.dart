@@ -24,7 +24,29 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const SplashWelcome(),
+    );
+  }
+}
+
+class SplashWelcome extends StatelessWidget {
+  const SplashWelcome({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('images/bg.jpg'),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Container(
+          alignment: const Alignment(0.0, -0.75),
+          child: const Text('DCSLab',
+              style: TextStyle(
+                  decoration: TextDecoration.none,
+                  color: Color.fromARGB(255, 95, 163, 219)))),
     );
   }
 }
