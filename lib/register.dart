@@ -1,5 +1,5 @@
+import 'package:dcslab_mobile/login.dart';
 import 'package:flutter/material.dart';
-import 'login.dart';
 
 class Register extends StatelessWidget {
   const Register({Key? key}) : super(key: key);
