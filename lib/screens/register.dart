@@ -1,4 +1,4 @@
-import 'package:dcslab_mobile/login.dart';
+import 'package:dcslab_mobile/screens/login.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatelessWidget {
@@ -7,7 +7,8 @@ class Register extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+        body: SingleChildScrollView(
+      child: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('images/bg.jpg'), fit: BoxFit.fill)),
@@ -128,6 +129,6 @@ class Register extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ));
   }
 }

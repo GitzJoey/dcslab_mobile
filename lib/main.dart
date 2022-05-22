@@ -1,5 +1,5 @@
+import 'package:dcslab_mobile/screens/login.dart';
 import 'package:flutter/material.dart';
-import 'login.dart';
 
 void main() {
   runApp(const MyApp());
