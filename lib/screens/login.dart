@@ -4,9 +4,10 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:dcslab_mobile/helper/api_constant.dart';
+import 'package:dcslab_mobile/helper/api_constants.dart';
 import 'package:dcslab_mobile/models/user.dart';
 import 'package:dcslab_mobile/screens/register.dart';
+import 'package:dcslab_mobile/screens/dashboard.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -129,16 +130,16 @@ class LoginState extends State<Login> {
   }
 }
 
-Future<List<UserModel>?> auth(String email, String password) async {
+Future<UserModel?> auth(String email, String password) async {
   try {
     var url = Uri.parse('${ApiConstants.baseUrl}/api/auth');
     var response = await http.post(url,
-        headers: <String, String>{'Content-Type': ApiConstants.contentType},
+        headers: ApiConstants.defaultHeaders,
         body:
             jsonEncode(<String, String>{'email': email, 'password': password}));
     if (response.statusCode == 200) {
-      List<UserModel> model = userModelFromJson(response.body);
-      return model;
+      UserModel user = UserModel.fromJson(jsonDecode(response.body));
+      return user;
     }
   } catch (e) {
     log(e.toString());
