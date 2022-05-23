@@ -137,4 +137,13 @@ class RegisterState extends State<Register> {
     debugPrint(nameController.text);
     debugPrint(nameController.text);
   }
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    passwordConfirmationController.dispose();
+    super.dispose();
+  }
 }
