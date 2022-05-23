@@ -11,22 +11,26 @@ class UserModel {
     required this.hId,
     required this.name,
     required this.email,
+    required this.profile,
   });
 
   String hId;
   String name;
   String email;
 
+  Profile profile;
+
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
-        hId: json["hId"],
-        name: json["name"],
-        email: json["email"],
-      );
+      hId: json['hId'],
+      name: json['name'],
+      email: json['email'],
+      profile: Profile.fromJson(json['profile']));
 
   Map<String, dynamic> toJson() => {
-        "hId": hId,
-        "name": name,
-        "email": email,
+        'hId': hId,
+        'name': name,
+        'email': email,
+        'profile': profile,
       };
 }
 
@@ -39,10 +43,10 @@ class Profile {
   String status;
 
   factory Profile.fromJson(Map<String, dynamic> json) => Profile(
-      firstName: json["first_name"],
-      lastName: json["last_name"],
-      status: json["status"]);
+      firstName: json['first_name'],
+      lastName: json['last_name'],
+      status: json['status']);
 
   Map<String, dynamic> toJson() =>
-      {"first_name": firstName, "last_name": lastName, "status": status};
+      {'first_name': firstName, 'last_name': lastName, 'status': status};
 }

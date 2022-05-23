@@ -1,4 +1,5 @@
 import 'package:dcslab_mobile/screens/register.dart';
+import 'package:dcslab_mobile/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -12,10 +13,7 @@ class LoginState extends State<Login> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  void doLogin() {
-    debugPrint(emailController.text);
-    debugPrint(passwordController.text);
-  }
+  void doLogin() {}
 
   @override
   Widget build(BuildContext context) {
