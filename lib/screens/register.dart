@@ -1,8 +1,17 @@
 import 'package:dcslab_mobile/screens/login.dart';
 import 'package:flutter/material.dart';
 
-class Register extends StatelessWidget {
+class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
+  @override
+  RegisterState createState() => RegisterState();
+}
+
+class RegisterState extends State<Register> {
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final passwordConfirmationController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -31,17 +40,19 @@ class Register extends StatelessWidget {
                   const SizedBox(
                     height: 75,
                   ),
-                  const TextField(
-                      decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Name',
-                    hintText: 'GitzJoey',
-                  )),
+                  TextField(
+                      controller: nameController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Name',
+                        hintText: 'GitzJoey',
+                      )),
                   const SizedBox(
                     height: 15,
                   ),
-                  const TextField(
-                    decoration: InputDecoration(
+                  TextField(
+                    controller: emailController,
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Email',
                       hintText: 'gitzjoey@dcslab.com',
@@ -50,11 +61,12 @@ class Register extends StatelessWidget {
                   const SizedBox(
                     height: 15,
                   ),
-                  const TextField(
+                  TextField(
+                    controller: passwordController,
                     obscureText: true,
                     enableSuggestions: false,
                     autocorrect: false,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Password',
                         hintText: '******************'),
@@ -62,11 +74,12 @@ class Register extends StatelessWidget {
                   const SizedBox(
                     height: 15,
                   ),
-                  const TextField(
+                  TextField(
+                    controller: passwordConfirmationController,
                     obscureText: true,
                     enableSuggestions: false,
                     autocorrect: false,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Confirm Password',
                         hintText: '******************'),
@@ -81,7 +94,7 @@ class Register extends StatelessWidget {
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(20)),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: doSignUp,
                       child: const Text(
                         'Sign Up',
                         style: TextStyle(color: Colors.white, fontSize: 20),
@@ -103,7 +116,7 @@ class Register extends StatelessWidget {
                             fontSize: 15),
                       )),
                   const SizedBox(
-                    height: 100,
+                    height: 85,
                   ),
                   TextButton(
                     onPressed: () {},
@@ -116,5 +129,12 @@ class Register extends StatelessWidget {
                     ),
                   )
                 ])))));
+  }
+
+  void doSignUp() {
+    debugPrint(nameController.text);
+    debugPrint(nameController.text);
+    debugPrint(nameController.text);
+    debugPrint(nameController.text);
   }
 }

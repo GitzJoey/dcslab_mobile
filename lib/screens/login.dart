@@ -1,8 +1,21 @@
 import 'package:dcslab_mobile/screens/register.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
+
+  @override
+  LoginState createState() => LoginState();
+}
+
+class LoginState extends State<Login> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  void doLogin() {
+    debugPrint(emailController.text);
+    debugPrint(passwordController.text);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +45,9 @@ class Login extends StatelessWidget {
                   const SizedBox(
                     height: 75,
                   ),
-                  const TextField(
-                    decoration: InputDecoration(
+                  TextField(
+                    controller: emailController,
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Email',
                       hintText: 'john.doe@example.com',
@@ -42,11 +56,12 @@ class Login extends StatelessWidget {
                   const SizedBox(
                     height: 15,
                   ),
-                  const TextField(
+                  TextField(
+                    controller: passwordController,
                     obscureText: true,
                     enableSuggestions: false,
                     autocorrect: false,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Password',
                         hintText: '******************'),
@@ -61,7 +76,7 @@ class Login extends StatelessWidget {
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(20)),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: doLogin,
                       child: const Text(
                         'Login',
                         style: TextStyle(color: Colors.white, fontSize: 20),
@@ -98,5 +113,12 @@ class Login extends StatelessWidget {
                 ],
               )),
             )));
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
   }
 }
